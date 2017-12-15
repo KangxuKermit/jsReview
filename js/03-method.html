@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			1.自定义函数（普通函数）
+			
+				function fn(){...}
+				
+				fn();
+				
+			注意：
+				1.永远不会主动执行，必须调用
+				
+			2.匿名函数
+				function(){....}
+		-->
+	</body>
+</html>
+
+<script type="text/javascript">
+	
+	// 细节1: 函数必须被调用,才会被执行
+	function fn1() {
+		alert("func1");
+	}
+//	fn1();
+
+	// 细节2: 如果函数需要返回值 直接使用return返回即可,不需要指定返回类型
+	function fn2() {
+		return 123;
+	}
+//	console.log(fn2());
+	
+	// 细节3: 如果需要传递参数,不需要指定类型
+	function fn3(a,b) {
+		alert(a+b);
+	}
+//	fn3("你","我");
+	
+	// 细节4: 在js中不存在函数重载, 如果写了两个,后面的会把前面的覆盖掉
+	function fn4(a,b) {
+		alert(a+b);
+	}
+	function fn4() {
+		alert(123);
+	}
+	//fn4();
+	
+	// 细节5: 如果需要传递参数,但是我就不传,不会报错
+	function fn5(a,b) { 
+		alert(a+b);
+	}
+	//fn5();
+	
+	// 细节6: 如果函数不需要传递参数, 我们就传参数, 不会报错,正常调用
+	function fn6() {
+		alert(12345);
+	}
+	//fn6(1,2,3);
+	
+	// 细节7: js提供arguments对象,类似于是数组
+	//里面存储了调用时候传递的参数
+	function fn7() {
+		//alert(arguments.length);
+		alert(arguments[1]);
+	}
+	fn7(1,2,3,4);
+	
+	// 细节8: 起别名时 函数不需要带括号
+	function asdasfvczfwqeqwesafqw() {
+		alert();
+	}
+	var fn = asdasfvczfwqeqwesafqw;
+	//fn();
+	
+	// 匿名函数的调用
+	/*var abc = function(){
+		alert(123);
+	}
+	abc();*/
+	(function() {
+		alert(456);
+	})();
+	
+	
+	
+	
+	
+</script>
+

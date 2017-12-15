@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			1.单次定时器（定时炸弹）
+				setTimeout(匿名函数整体或者自定义函数名称,时长);
+				
+				等待时长结束，才会执行前面的函数,只会执行一次
+			
+			
+			2.循环定时器（闹钟）
+				setInterval(匿名函数整体或者自定义函数名称,时长);
+				
+				等待时长结束，才会执行前面的函数,每个该时长都会执行一次，死循环
+				
+			3.清除（关闭）定时器
+				clearTimeout(变量名);
+				clearInterval(变量名);
+			
+			注意：
+				1.时长单位是毫秒
+				2.一般来说，在开启之前，我们都会停一次定时器
+		-->
+		<input type="button" id="btn1" value="单次定时器" />
+		<input type="button" id="btn2" value="循环定时器" />
+		<input type="button" id="btn3" value="关闭单次定时器" />
+		<input type="button" id="btn4" value="关闭循环定时器" />
+		<input type="button" id="btn5" value="按钮" />
+		<div id="box" style="width: 100px;height: 100px;background: pink;"></div>
+	</body>
+</html>
+
+<script type="text/javascript">
+	var timer1,timer2;
+	
+	var btn1 = document.getElementById("btn1");
+	function fn1() {
+		alert("setTimeout ...")
+	}
+	btn1.onclick = function() {
+		/*setTimeout(function(){
+			alert("setTimeout...");
+		},1000)*/
+		timer1 = setTimeout(fn1,1000);
+	}
+	
+	var btn2 = document.getElementById("btn2");
+	btn2.onclick = function(){
+		timer2 = setInterval(function(){
+			alert("起床啦")
+		},1000)
+	}
+	
+	var btn3 = document.getElementById("btn3");
+	btn3.onclick = function(){
+		clearTimeout(timer1);
+	}
+	
+	var btn4 = document.getElementById("btn4");
+	btn4.onclick = function(){
+		clearInterval(timer2);
+	}
+	
+	var btn5 = document.getElementById("btn5");
+	var box = document.getElementById("box");
+	var num = 0;
+	var timer3;
+	btn5.onclick = function(){
+		clearInterval(timer3);
+		timer3 = setInterval(function(){
+			num+=10;
+			box.style.marginLeft = num+"px";
+		},30)
+	}
+	
+	
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		您喜欢的城市:<br> 
+	   	<ul id="city">
+	   	 	<li id="bj" value="beijing">北京</li>
+			<li id="sh" value="shanghai">上海</li>
+			<li id="cq" value="chongqing"> 重庆</li>
+	   	</ul>
+	  
+	  	您喜欢的游戏:<br> 
+	   	<ul>
+	   	 	<li id="fk" value="fankong">反恐精英</li>
+			<li id="ms" value="moshou">魔兽</li>
+			<li id="cq" value="chuanqi">传奇</li>
+	   	</ul>
+	</body>
+</html>
+
+<script type="text/javascript">
+	//需求：点击北京节点， 将被反恐节点替换
+	var city = document.getElementById("city");
+	var liBJ = document.getElementById("bj");
+	var liFK = document.getElementById("fk");
+	
+	liBJ.onclick = function() {
+		// replaceChild(newChild: Node, oldChild: Node): Node
+		//cloneNode() 如果不写true，只克隆标签和标签属性
+		city.replaceChild(liFK.cloneNode(true), liBJ);
+	}
+	//replaceChild()
+	//这种操作是剪切+粘贴
+	
+	/*bj.onclick = function(){
+		
+		city.replaceChild(fk,bj);
+		
+	}*/
+	
+	//复制+粘贴
+	//cloneNode() 如果不写true，只克隆标签和标签属性
+	//var newFk = fk.cloneNode(true);
+	
+	//下面是错误的，这不是一个节点
+	//var newFk = "<li id=fk value=fankong>反恐精英</li>";
+</script>

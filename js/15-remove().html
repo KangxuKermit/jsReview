@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="city">
+			<li id="bj">北京</li>
+			<li id="sh">上海</li>
+			<li id="cq">广州</li>
+		</ul>
+	</body>
+</html>
+
+<script type="text/javascript">
+	//需求：直接删除bj
+	var bj = document.getElementById("bj");
+	//bj.remove();
+
+	//需求：通过city删除bj
+	var city = document.getElementById("city");
+	//city.removeChild(bj);
+
+	//需求：通过父节点的自杀
+	bj.parentNode.removeChild(bj);
+
+</script>

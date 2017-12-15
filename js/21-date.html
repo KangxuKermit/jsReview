@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+
+
+<script>
+	//距离圣诞节还有0天0时0分0秒
+	//12月25日00:00:00
+	fn();
+	function fn() {
+		//现在的时间点
+		var nowTime = new Date();
+		
+		//未来的时间点
+		var futureTime = new Date("Dec 25 2017 00:00:00");
+		
+		//差值秒
+		var seconds = (futureTime - nowTime) / 1000;
+		
+		//天
+		//  /60/60/24
+		var day = parseInt(seconds/86400);
+		
+		//时
+		var hour = parseInt(seconds/3600%24);
+		
+		//分
+		var minute = parseInt(seconds/60%60);
+		
+		//秒
+		var miao = parseInt(seconds%60);
+		
+		//"距离圣诞节还有"+day+"天"+hour+"时"+minute+"分"+miao+"秒"
+		
+		//document.write("距离圣诞节还有"+day+"天"+hour+"时"+minute+"分"+miao+"秒");
+		document.getElementsByTagName("body")[0].innerHTML = "距离圣诞节还有"+day+"天"+hour+"时"+minute+"分"+miao+"秒";
+	}
+	//console.log(miao);
+	
+	setInterval(fn,1000);
+	
+	
+	
+	
+</script>

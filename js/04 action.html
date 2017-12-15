@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//只有当页面其他内容全部加载完成之后才会执行这里的语句
+			window.onload = function(){
+				var oDiv = document.getElementById("box");
+				console.log(oDiv);
+				//从文档中通过id名为box去获取某个元素
+			}
+		</script>
+	</head>
+	<body>
+		<!--
+			事件
+				事件源		就是页面中的某个标签
+				事件类型		用户的行为
+				执行指令		满足条件发生了什么
+				
+			语法格式：事件源.事件类型 = 执行指令
+				
+			事件类型
+				注意：js中所有的事件类型强制加on
+				
+				onload	某个页面或图像被完成加载之后执行某些指令
+					页面加载函数（入口函数）
+					window.onload = function(){
+						//当页面中其他的资源都加载完成之后，才会执行这里的语句
+						var oDiv = document.getElementById("box");
+						console.log(oDiv);
+						//从文档中通过id名为box去获取某个元素
+					}
+					
+				onsubmit 表单提交的时候（只能绑定给form）
+				
+				onclick 单击
+				
+				onblur	失去键盘输入焦点
+				
+				onfocus	获取键盘输入焦点
+				
+				onchange	当内容被改变的时候
+				
+				onmouseover	鼠标移入
+				
+				onmouseout	鼠标移出
+		-->
+		
+		<div id="box"></div>
+		<form id="myForm">
+			<input type="text" name="username" id="text" value="请输入..." />
+			<hr />
+			<input type="submit" value="提交" id="btn" />
+		</form>
+		
+	</body>
+</html>
+
+<script type="text/javascript">
+	var myForm = document.getElementById("myForm");
+	myForm.onsubmit = function() {
+		console.log("form submit");
+	}
+	
+	var myText = document.getElementById("text");
+	
+	myText.onfocus = function() {
+		console.log("focus - 获取焦点");
+	}
+	myText.onblur = function() {
+		console.log("blur - 失去焦点");
+	}
+	myText.onchange = function() {
+		console.log("change - 内容改变");
+	}
+	myText.onmouseover = function() {
+		console.log("mouseover - ");
+	}
+	myText.onmouseout = function() {
+		console.log("mouseout - 鼠标移出");
+	}
+	myText.onmouseenter = function() {
+		console.log("mouseenter -鼠标移入")
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</script>

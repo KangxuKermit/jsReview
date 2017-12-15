@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="tname" value="英雄联盟5周年_1" id="tid_1"><br>
+		<input type="text" name="tname" value="英雄联盟5周年_2" id="tid_2"><br>
+		<input type="text" name="tname" value="英雄联盟5周年_3" id="tid_3"><br>
+		<input type="button" name="ok" value="保存1"/>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	var tname = document.getElementsByName("tname");
+	console.log(tname.length);
+	// 打印value
+	for (var i = 0; i < tname.length; i++) {
+		console.log(tname[i].value);
+		
+		tname[i].onchange = function() {
+			//在循环中的function是异步加载的，延后执行
+   			//等for循环结束之后才会执行
+   			//this
+   			//在执行指令代表当前正在被操作的事件源
+   			//console.log(i);
+   			//console.log(tname[i].value);
+			console.log(this.value);
+		}
+		
+		// 给第二个input绑定鼠标移入事件
+		if (i == 1) {
+			tname[1].onmouseover = function() {
+				console.log("onmouseover...")
+			}
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+</script>
+
+

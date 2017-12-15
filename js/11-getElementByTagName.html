@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form name="form1" action="test.html" method="post">
+  	   	  	<input type="text" name="tname" value="英雄联盟5周年_1"  id="tid_1"><br>
+		 	<input type="text" name="tname" value="英雄联盟5周年_2"  id="tid_2"><br>
+			<input type="text" name="tname" value="英雄联盟5周年_3"  id="tid_3"><br>
+			<input type="button" name="ok" value="保存1"/>
+  	 	</form>
+	
+	   	<select name="edu" id="edu">
+	   	  	<option value="博士">博士^^^^^</option>
+			<option value="硕士" selected="selected">硕士^^^^^</option>
+			<option value="本科" >本科^^^^^</option>
+		  	<option value="幼儿园">幼儿园^^^^^</option>
+		  	<option value="幼儿园">幼儿园^^^^^</option>
+		  	<option value="幼儿园">幼儿园^^^^^</option>
+		  	<option value="幼儿园">幼儿园^^^^^</option>
+		  	<option value="幼儿园">幼儿园^^^^^</option>
+	   	</select>
+	   
+	   	<select name="job" id="job" >
+	   	  	<option value="美容">美容^^^^^</option>
+			<option value="IT">IT^^^^^</option>
+			<option value="程序员">程序员^^^^^</option>
+			<option value="建筑师">建筑师^^^^^</option>
+	   	</select>
+	   
+	   	<input type="button" value="点击输出下拉框被选中的值"/>
+	   	
+	   	<div id="demo">123</div>
+	</body>
+</html>
+
+<script type="text/javascript">
+	//需求：获取所有的input元素,返回值是数组
+	//需求：测试长度
+	//需求：输出value的值
+    var inputs = document.getElementsByTagName("input");
+    console.log(inputs.length);
+    for (var i = 0; i < inputs.length; i++) {
+    		console.log(inputs[i].value);
+    }
+	console.log("**************");
+    //需求：输出type="text"中 value属性的值 不包含按钮(button)	
+    for (var i = 0; i < inputs.length; i++) {
+    		if(inputs[i].type == "text") {
+			console.log(inputs[i].value);
+    		}
+    }
+	console.log("**************");
+   	//需求：输出所有下拉选框select的option标签中value的值
+   	var selects = document.getElementsByTagName("select");
+   	for (var i = 0; i < selects.length; i++) {
+   		console.log(selects[i].name);
+   		var options = selects[i].getElementsByTagName("option");
+   		for (var j = 0; j < options.length; j++) {
+   			console.log(options[j].value);
+   		}
+
+   	}
+   	
+    //需求：输出下拉选框 id="edu"中option标签中 value属性的值  
+    //1.获取id="edu"的元素
+    //2.通过该id查找他的子级元素
+	console.log("**************");
+    var edus = document.getElementById("edu");
+    var eduOptions = edus.getElementsByTagName("option");
+    for (var i = 0; i < eduOptions.length; i++) {
+    		console.log(eduOptions[i].value);
+    }
+    
+    
+</script>

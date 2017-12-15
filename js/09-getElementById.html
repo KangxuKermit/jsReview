@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="submit" value="Click" id="btn1"/>
+		<input type="submit" value="Click" id="btn2"/>
+		<input type="submit" value="Click" id="btn3"/>
+		
+	</body>
+</html>
+
+<script type="text/javascript">
+	var btn1 = document.getElementById("btn1");
+	btn1.onclick = function() {
+		alert("btn1");
+	}
+	
+	function btn(id) {
+		return document.getElementById(id);
+	}
+	btn("btn2").onclick = function() {
+		alert("btn2");
+	}
+	
+	
+	
+</script>
